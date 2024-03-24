@@ -2,9 +2,8 @@
 using namespace std;
 
 int main() {
+  cout << "Welcome to the Bank of Criminals!! \nHow would you like to Proceed....\n";
 
-
-  cout << "Hello World ";
   
   return 0;
 }
