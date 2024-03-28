@@ -1,24 +1,30 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 int main() {
-  int any;
-  char newAccount = 'N' || 'n';
-  char oldAccount = 'A';
-  cout << "Welcome to the Bank of Criminals!! \nPress any key to continue....\n";
-  cout << "If you want to open a new accout type (N) or if you already have an account with us, type (A) \n";
-  cin >> oldAccount;
-  if (oldAccount) {
-    cout << "Welcome back to your account \n";
-    cout << "How would you like to proceed? \n";
-    cin >> any;
-    cout << "1.Check Balance\n2.Deposit\n3.Withdraw\n4.Exit Bank";
+  int Option1 = 1, Option2 = 2, account_Options;
+  string user_Name, user_Password;
+  srand (time(NULL));
+  cout << "Welcome to Scam Bank \n" // Welcome message and Options to choose New account or Proceed to an account.
+    "1.Open New Account \n"
+    "2.Continue to my Account \n"
+    "How would you like to proceed?..."
+  ;
+  cin >> account_Options; 
+    if (account_Options == Option1) { //Option for New user.
+      cout << "Welcome, New user \n";
+      cout << "Please type your First name:... \n";
+        cin >> user_Name;
+      cout << "Please type a password:... \n";
+        cin >> user_Password;
+      cout << "Your Name is " <<user_Name<<endl;
+      cout << "Your Password is " <<user_Password<<endl;
+      cout << "Your account Number is: ";
 
-  } else  {
-    cout << "Welcome new user \n";
-    
-  }
-  
+    } else { // Option for current user
+      cout << "Welcome back to your account \n";
+    }
   
   return 0;
 }
