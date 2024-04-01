@@ -1,16 +1,18 @@
 #include <iostream>
 #include <time.h>
+#include <time.h>
 using namespace std;
 
 int main() {
   int Option1 = 1, Option2 = 2, account_Options;
   string user_Name, user_Password;
   srand (time(NULL));
+  int account_No = rand () % 32767 + 30000;
   cout << "Welcome to Scam Bank \n" // Welcome message and Options to choose New account or Proceed to an account.
     "1.Open New Account \n"
     "2.Continue to my Account \n"
-    "How would you like to proceed?..."
-  ;
+    "How would you like to proceed?...\n";
+
   cin >> account_Options; 
     if (account_Options == Option1) { //Option for New user.
       cout << "Welcome, New user \n";
@@ -18,9 +20,8 @@ int main() {
         cin >> user_Name;
       cout << "Please type a password:... \n";
         cin >> user_Password;
-      cout << "Your Name is " <<user_Name<<endl;
-      cout << "Your Password is " <<user_Password<<endl;
-      cout << "Your account Number is: ";
+      cout << "Hi " <<user_Name<< ", Thanks for creating an accout with us!"<< endl;
+      cout << "Your account Number is: " << 100 << account_No;
 
     } else { // Option for current user
       cout << "Welcome back to your account \n";
