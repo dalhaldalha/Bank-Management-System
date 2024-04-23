@@ -1,13 +1,20 @@
 #include <iostream>
-#include <time.h>
+#include <iomanip>
 #include <time.h>
 using namespace std;
+
+class BankAccount {
+  public:
+  string name;
+  double accout_balance;
+  
+}
 
 int main() {
   int Option1 = 1, Option2 = 2, Option3 = 3, Option4 = 4, account_Options;
   string user_Name, user_Password;
   srand(time(NULL));
-  int account_No = rand() % 32767 + 30000;
+  int account_No = rand() % 10000000000 + 1000000000;
   cout << "Welcome to Scam Bank \n" // Welcome message and Options to choose New account or Proceed to an account.
           "1.Open New Account \n"
           "2.Continue to my Account \n"
@@ -21,17 +28,43 @@ int main() {
     cout << "Please type a password:... \n";
     cin >> user_Password;
     cout << "Hi " << user_Name << ", Thanks for creating an accout with us!" << endl;
-    cout << "Your account Number is: " << 100 << account_No;
-    cout << "How would you like to procceed?" << endl;
-    cout << "1.Deposit \n"
-            "2.Withdraw \n"
-            "3.Check Balance \n"
-            "4.Exit \n";
-    cin >> account_Options;
-  
-    } else { // Option for current user
-      cout << "Welcome back to your account \n";
+    cout << "Your account Number is: " << account_No;
+    while (true)
+    {
+      double deposit_amount;
+      double account_Balance = 0; // The account balance of user account
+      cout << "How would you like to procceed?" << endl;
+      cout << "1.Deposit \n"
+              "2.Withdraw \n"
+              "3.Check Balance \n"
+              "4.Exit \n";
+      cin >> account_Options;
+
+      const int option1= 1, option2 = 2, option3 = 3, option4 = 4;
+      switch (account_Options) {
+        case option1:
+          cout << "How much would you like to deposit" << endl;
+          cin >> deposit_amount;
+          cout << "You have successfully deposit $" << deposit_amount << " to your balance." << endl;
+          break;
+        case option2:
+          int withdraw;
+          cout << "How much would you like to withdraw? \n";
+          cin >> withdraw;
+          cout << "You have withdrawn: " << withdraw << endl;
+          break;
+        case option3:
+          cout << "Your current balance is: " << account_Balance + deposit_amount << endl;
+          break;
+        case option4:
+          cout << "Thank you for using Scam Bank!" << endl;
+          return 0;
+          break;
+        default:
+          cout << "Invalid Option" << endl;
+          break;
+      }
     }
-  
-  return 0;
+
+  }  return 0;
 }
