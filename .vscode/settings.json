@@ -1,5 +1,7 @@
 {
   "files.associations": {
     "iostream": "cpp"
-  }
+  },
+  "sqltools.connections": [],
+  "better-comments.highlightPlainText": true
 }
