@@ -53,8 +53,8 @@ int main() {
   srand(time(NULL));
   int account_No = rand() % 10000000000 + 1000000000; // Generates some random numbers
   int account_Options;
-  double deposit_amount;
-  BankAccount user1(0.0);
+  double amount;
+  BankAccount user1(0);
   // Welcome message and Input for Name
   cout << "Welcome to Simple Bank \n"
           "What is your first name? \n";
@@ -79,14 +79,14 @@ int main() {
         case option1:
           int deposit;
           cout << "How much would you like to deposit" << endl;
-          cin >> deposit;
-          cout << "You have successfully deposit $" << user1.deposit << " to your balance." << endl;
-          break;
+          cin >> amount;
+          user1.deposit(amount);
+           break;
         case option2:
           int withdraw;
           cout << "How much would you like to withdraw? \n";
-          cin >> withdraw;
-          cout << "You have withdrawn: " << withdraw << endl;
+          cin >> amount;
+          user1.withdraw(amount);
           break;
         case option3:
           cout << "Your current balance is: $" << user1.getBalance() << endl;
