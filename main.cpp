@@ -1,11 +1,29 @@
 #include <iostream>
 #include <iomanip>
-#include <time.h>
+#include <ctime>
 using namespace std;
 
+class BankAccount {
+  public:
+    string accountName;
+    int accountBalance;
+};
+
+int main() {
+  BankAccount user1;
+  cout << "What is your first name \n";
+  cin >> user1.accountName;
+
+  cout << "Hi " << user1.accountName << ", Welcome to Scam Bank \n";
+
+  return 0;
+}
+
+/*
 //This function gives a Bank Account class
 
 class BankAccount {
+/ 
   double account_balance;
 
 public:
@@ -76,3 +94,4 @@ int main() {
 
   }  return 0;
 }
+*/
